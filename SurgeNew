@@ -1,0 +1,67 @@
+[General]
+loglevel = notify
+skip-proxy = 127.0.0.1, 192.168.0.0/16, 193.168.0.0/24, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10,localhost,*.local
+dns-server = 223.5.5.5, 119.29.29.29, 114.114.114.114, 101.6.6.6, 2001:da8::666
+external-controller-access = passw@127.0.0.1:6170
+ipv6 = true
+exclude-simple-hostnames = true
+allow-wifi-access = true
+http-listen = 0.0.0.0:8888
+socks5-listen = 0.0.0.0:8889
+wifi-access-socks5-port = 8889
+wifi-access-http-port = 8888
+
+[Replica]
+hide-apple-request = true
+
+[Proxy]
+Ad-Pass = direct
+Ad-Block = reject
+Ad-GIF = reject-tinygif
+access point1 = ss, xx.xxx.com, 443, encrypt-method=rc4-md5, password=123456
+access point2 = ss, xx.xxx.com, 443, encrypt-method=rc4-md5, password=123456, obfs=http, obfs-host=xxx.com, udp-relay=true, tfo=true
+
+[Proxy Group]
+Proxy = select, Auto, access point1, access point2
+Auto = fallback, access point1, access point2, url = http://www.bing.com/, interval = 30, timeout = 2, tolerance = 100
+Video = select, Auto, access point1, access point2  
+AdBlock = select, Ad-GIF, Ad-Block, Ad-Pass
+
+[Rule]
+USER-AGENT,App%20Store*,DIRECT
+USER-AGENT,MacAppStore*,DIRECT
+USER-AGENT,%E8%BD%AF%E4%BB%B6%E6%9B%B4%E6%96%B0*,DIRECT
+URL-REGEX,^https?://www\.duokan\.com/pictures?,REJECT
+URL-REGEX,^https?://www\.duokan\.com/promotion_day,REJECT
+DOMAIN,reserve-prime.apple.com,DIRECT
+# RULE-SET
+RULE-SET,SYSTEM,DIRECT
+RULE-SET,https://github.com/scomper/surge-list/raw/master/apple.list,Proxy
+RULE-SET,https://github.com/scomper/surge-list/raw/master/adblock.list,AdBlock
+RULE-SET,https://github.com/scomper/surge-list/raw/master/reject.list,AdBlock
+RULE-SET,https://github.com/scomper/surge-list/raw/master/cn.list,DIRECT
+RULE-SET,https://github.com/scomper/surge-list/raw/master/video.list,Video
+RULE-SET,https://github.com/scomper/surge-list/raw/master/blocked.list,Proxy
+RULE-SET,https://github.com/scomper/surge-list/raw/master/telegram.list,Proxy
+RULE-SET,LAN,DIRECT
+# GeoIP CN
+GEOIP,CN,DIRECT
+FINAL,Proxy,dns-failed
+
+[Host]
+*.taobao.com = server:223.5.5.5
+*.jd.com = server:223.5.5.5
+*.tmall.com = server:223.5.5.5
+
+[URL Rewrite]
+^http://www\.google\.cn http://www.google.com.hk header
+
+[Header Rewrite]
+^http://www\.biquge\.com\.tw header-del Cookie
+^https?://www\.zhihu\.com header-replace User-Agent Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1 Safari/605.1.15
+
+[SSID Setting]
+"Apple Store" suspend=true
+"iPhone X" cellular-mode=true
+
+[MITM]
