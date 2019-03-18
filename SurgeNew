@@ -15,6 +15,7 @@ wifi-access-http-port = 8888
 hide-apple-request = true
 
 [Proxy]
+Direct = direct
 Ad-Pass = direct
 Ad-Block = reject
 Ad-GIF = reject-tinygif
@@ -23,9 +24,13 @@ access point2 = ss, xx.xxx.com, 443, encrypt-method=rc4-md5, password=123456, ob
 
 [Proxy Group]
 Proxy = select, Auto, access point1, access point2
-Auto = fallback, access point1, access point2, url = http://www.bing.com/, interval = 30, timeout = 2, tolerance = 100
-Video = select, Auto, access point1, access point2  
+China = select, Direct, Proxy, access point1, access point2
+China_video = select, Direct, Proxy, access point1, access point2
+Foreign_video = select, Proxy, Direct, access point1, access point2
+Apple = select, Direct, Auto, fallback, access point1, access point2
 AdBlock = select, Ad-GIF, Ad-Block, Ad-Pass
+Auto = url-test, access point1, access point2, url = http://www.bing.com/, interval = 30, timeout = 2, tolerance = 100
+fallback = fallback, access point1, access point2, url = http://www.bing.com/, interval = 30, timeout = 2, tolerance = 100
 
 [Rule]
 USER-AGENT,App%20Store*,DIRECT
@@ -36,13 +41,14 @@ URL-REGEX,^https?://www\.duokan\.com/promotion_day,REJECT
 DOMAIN,reserve-prime.apple.com,DIRECT
 # RULE-SET
 RULE-SET,SYSTEM,DIRECT
-RULE-SET,https://github.com/scomper/surge-list/raw/master/apple.list,Proxy
-RULE-SET,https://github.com/scomper/surge-list/raw/master/adblock.list,AdBlock
-RULE-SET,https://github.com/scomper/surge-list/raw/master/reject.list,AdBlock
-RULE-SET,https://github.com/scomper/surge-list/raw/master/cn.list,DIRECT
-RULE-SET,https://github.com/scomper/surge-list/raw/master/video.list,Video
-RULE-SET,https://github.com/scomper/surge-list/raw/master/blocked.list,Proxy
-RULE-SET,https://github.com/scomper/surge-list/raw/master/telegram.list,Proxy
+RULE-SET,https://raw.githubusercontent.com/easonsun1981/Surgelist/master/china.list,China
+RULE-SET,https://raw.githubusercontent.com/easonsun1981/Surgelist/master/china_video.list,China_video
+RULE-SET,https://raw.githubusercontent.com/easonsun1981/Surgelist/master/foreign_video.list,Foreign_video
+RULE-SET,https://raw.githubusercontent.com/easonsun1981/Surgelist/master/apple.list,Apple
+RULE-SET,https://raw.githubusercontent.com/easonsun1981/Surgelist/master/adblock.list,AdBlock
+RULE-SET,https://raw.githubusercontent.com/easonsun1981/Surgelist/master/reject.list,AdBlock
+RULE-SET,https://raw.githubusercontent.com/easonsun1981/Surgelist/master/restricted.list,Proxy
+RULE-SET,https://raw.githubusercontent.com/easonsun1981/Surgelist/master/telegram.list,Proxy
 RULE-SET,LAN,DIRECT
 # GeoIP CN
 GEOIP,CN,DIRECT
