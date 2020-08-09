@@ -32,12 +32,12 @@ vsco.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/S
 # > 扫描全能王 pro
 CamScanner.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js,type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?
 # > 第一弹 去广告+原画
-Diyidan.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/Diyidan.js,type=http-response,pattern=^https:\/\/api\.diyidan\.net\/v0\.3\/(user\/personal_homepage|vip_user\/info|tv_series\/index\?appChanne)
+Diyidan.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/easonsun1981/Surge/master/Script/Diyidan.js,type=http-response,pattern=^https:\/\/api\.diyidan\.net\/v0\.3\/(user\/personal_homepage|vip_user\/info|tv_series\/index\?appChanne)
 # > 马卡龙VIP
-mkl.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/mkl.js,type=http-response,pattern=https://app.api.versa-ai.com/pay/order/iap/check
+mkl.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/easonsun1981/Surge/master/Script/mkl.js,type=http-response,pattern=https://app.api.versa-ai.com/pay/order/iap/check
 # > IT之家 去新闻列表广告
-ITHome.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/ITHome.js,type=http-response,pattern=^https?:\/\/api\.ithome\.com\/json\/slide\/index
-ITHome.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/ITHome.js,type=http-response,pattern=^https?:\/\/api\.ithome\.com\/json\/(newslist|listpage)\/news
+ITHome.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/easonsun1981/Surge/master/Script/ITHome.js,type=http-response,pattern=^https?:\/\/api\.ithome\.com\/json\/slide\/index
+ITHome.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/easonsun1981/Surge/master/Script/ITHome.js,type=http-response,pattern=^https?:\/\/api\.ithome\.com\/json\/(newslist|listpage)\/news
 
 [MITM]
 hostname = %APPEND% api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, *.amemv.com, aweme.snssdk.com, mp.weixin.qq.com, sp.kaola.com, *.zhihu.com, *.snssdk.com, vsco.co, ap*.intsig.net, api.diyidan.net, app.api.versa-ai.com, api.ithome.com
