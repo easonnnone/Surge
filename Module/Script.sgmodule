@@ -38,6 +38,8 @@ mkl.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.co
 # > IT之家 去新闻列表广告
 ITHome.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/easonsun1981/Surge/master/Script/ITHome.js,type=http-response,pattern=^https?:\/\/api\.ithome\.com\/json\/slide\/index
 ITHome.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/easonsun1981/Surge/master/Script/ITHome.js,type=http-response,pattern=^https?:\/\/api\.ithome\.com\/json\/(newslist|listpage)\/news
+# > YouTube去5秒广告
+http-request ^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier) script-path=https://Choler.github.io/Surge/Script/YouTube.js
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, *.amemv.com, aweme.snssdk.com, mp.weixin.qq.com, sp.kaola.com, *.zhihu.com, *.snssdk.com, vsco.co, ap*.intsig.net, api.diyidan.net, app.api.versa-ai.com, api.ithome.com
+hostname = %APPEND% api.m.jd.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, *.amemv.com, aweme.snssdk.com, mp.weixin.qq.com, sp.kaola.com, *.zhihu.com, *.snssdk.com, vsco.co, ap*.intsig.net, api.diyidan.net, app.api.versa-ai.com, api.ithome.com,*.googlevideo.com
