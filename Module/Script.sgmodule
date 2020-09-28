@@ -59,4 +59,4 @@ ITHome.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent
 Keep.js = requires-body=1,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/NobyDa/Surge/JS/Keep.js,type=http-response,pattern=^https:\/\/api\.gotokeep\.com\/(.+\/subject|.+\/dynamic)
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, ios.prod.ftl.netflix.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, *.amemv.com, aweme.snssdk.com, mp.weixin.qq.com, sp.kaola.com, *.zhihu.com, *.snssdk.com, vsco.co, ap*.intsig.net, app.api.versa-ai.com, api.ithome.com, api.interpreter.caiyunai.com, api.keepkeep.com
+hostname = %APPEND% api.m.jd.com, ios.prod.ftl.netflix.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, *.amemv.com, aweme.snssdk.com, mp.weixin.qq.com, sp.kaola.com, *.zhihu.com, *.snssdk.com, vsco.co, ap*.intsig.net, app.api.versa-ai.com, api.ithome.com, api.interpreter.caiyunai.com, api.keepkeep.com, api.gotokeep.com
