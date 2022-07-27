@@ -1,0 +1,13 @@
+# Mail
+# iCloud
+DOMAIN,imap.mail.me.com
+DOMAIN,smtp.mail.me.com
+# Gmail
+DOMAIN,imap.gmail.com
+DOMAIN,smtp.gmail.com
+# Outlook
+DOMAIN,imap-mail.outlook.com
+DOMAIN,smtp-mail.outlook.com
+# Yahoo
+DOMAIN,imap.mail.yahoo.com
+DOMAIN,smtp.mail.yahoo.com
